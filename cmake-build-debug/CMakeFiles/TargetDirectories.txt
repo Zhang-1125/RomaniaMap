@@ -1,0 +1,3 @@
+C:/Users/MoQing/Desktop/RomaniaMap/cmake-build-debug/CMakeFiles/RomaniaMap.dir
+C:/Users/MoQing/Desktop/RomaniaMap/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/MoQing/Desktop/RomaniaMap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
