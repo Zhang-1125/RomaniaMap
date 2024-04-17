@@ -3,8 +3,7 @@
 
 
 int main() {
-    Search search("Arad","Bucharest");
-    search.Init(R"(C:\Users\MoQing\Desktop\RomaniaMap\Romania.txt)");
+    Search search("Arad","Bucharest",R"(C:\Users\MoQing\Desktop\RomaniaMap\Romania.txt)");
     search.AStar();
     return 0;
 }

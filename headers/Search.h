@@ -9,9 +9,8 @@
 
 class Search{
 public:
-    Search(string start, string goal);
+    Search(string start, string goal, const string& ss);
 
-    void Init(const string& ss);
 
     void BFS();         // 广度优先搜索
     void DFS();         // 深度优先搜索

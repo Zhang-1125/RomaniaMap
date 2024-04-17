@@ -61,12 +61,6 @@ build CMakeFiles/RomaniaMap.dir/cpps/Node.cpp.obj: CXX_COMPILER__RomaniaMap_unsc
   OBJECT_DIR = CMakeFiles\RomaniaMap.dir
   OBJECT_FILE_DIR = CMakeFiles\RomaniaMap.dir\cpps
 
-build CMakeFiles/RomaniaMap.dir/cpps/General.cpp.obj: CXX_COMPILER__RomaniaMap_unscanned_Debug C$:/Users/MoQing/Desktop/RomaniaMap/cpps/General.cpp || cmake_object_order_depends_target_RomaniaMap
-  DEP_FILE = CMakeFiles\RomaniaMap.dir\cpps\General.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\RomaniaMap.dir
-  OBJECT_FILE_DIR = CMakeFiles\RomaniaMap.dir\cpps
-
 build CMakeFiles/RomaniaMap.dir/cpps/Search.cpp.obj: CXX_COMPILER__RomaniaMap_unscanned_Debug C$:/Users/MoQing/Desktop/RomaniaMap/cpps/Search.cpp || cmake_object_order_depends_target_RomaniaMap
   DEP_FILE = CMakeFiles\RomaniaMap.dir\cpps\Search.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
@@ -87,7 +81,7 @@ build CMakeFiles/RomaniaMap.dir/cpps/TreeNode.cpp.obj: CXX_COMPILER__RomaniaMap_
 #############################################
 # Link the executable RomaniaMap.exe
 
-build RomaniaMap.exe: CXX_EXECUTABLE_LINKER__RomaniaMap_Debug CMakeFiles/RomaniaMap.dir/main.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/Node.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/General.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/Search.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/TreeNode.cpp.obj
+build RomaniaMap.exe: CXX_EXECUTABLE_LINKER__RomaniaMap_Debug CMakeFiles/RomaniaMap.dir/main.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/Node.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/Search.cpp.obj CMakeFiles/RomaniaMap.dir/cpps/TreeNode.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RomaniaMap.dir

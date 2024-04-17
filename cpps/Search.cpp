@@ -8,22 +8,18 @@
 #include <iostream>
 #include <fstream>
 
-/**
- * 构造函数: 初始化搜索的起始点和目标点
- * @param start 起始点的字符串表示
- * @param goal 目标点的字符串表示
- */
-Search::Search(string start, string goal) {
-    this->start = start; // 设置起始点
-    this->goal = goal; // 设置目标点
-}
 
 /**
- * 初始化Search类，通过读取文件来构建罗马尼亚问题的城市图。
- *
- * @param ss 文件名，包含罗马尼亚问题的城市信息。
+ * 构造函数：Search
+ * 功能：初始化搜索对象，包括起始点、目标点和读取城市信息文件
+ * 参数：
+ *   - start: string类型，表示搜索的起始点
+ *   - goal: string类型，表示搜索的目标点
+ *   - ss: const string&类型，表示城市信息文件的路径
  */
-void Search::Init(const string& ss) {
+Search::Search(string start, string goal, const string& ss) {
+    this->start = start; // 设置起始点
+    this->goal = goal; // 设置目标点
     std::ifstream f;      // 创建文件流用于读取城市信息文件
     f.open(ss,std::ios_base::in);
     if (!f.is_open()) {   // 检查文件是否成功打开
@@ -47,6 +43,7 @@ void Search::Init(const string& ss) {
     }
     f.close(); // 关闭文件流
 }
+
 
 
 /**
