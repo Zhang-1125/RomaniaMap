@@ -9,33 +9,22 @@
 #include <unordered_map>
 
 using std::string;
+typedef std::pair<string, int> neighbor;
 
 class Node{
 public:
-    explicit Node(string name);
+    explicit Node(string name, int h, int neighbor_num);
 
-    // 获取节点名称
-    string getName();
-    // unsigned short getID() const;
+    string getName();                 // 获取节点名称
+    int getNeighborNum() const;         // 获取节点的邻居节点个数
+    int getH() const;              // 获取节点的h值
 
-    // 通过函数重载，添加1-4个邻居
-    void addNeighbor(Node* node, int distance);
-    void addNeighbor(Node* node1, int distance1, Node* node2, int distance2);
-    void addNeighbor(Node* node1, int distance1, Node* node2, int distance2, Node* node3, int distance3);
-    void addNeighbor(Node* node1, int distance1, Node* node2, int distance2, Node* node3, int distance3, Node* node4, int distance4);
-
-    struct Neighbor {
-        Node* node;
-        int distance;
-    };
-    std::unordered_map<string, Neighbor> neighbors;
-    bool visited = false;
-    int USC_cost = 0;
-
+    std::unordered_map<int,neighbor> nextState;
 
 private:
     string name;
-    // unsigned short ID;
+    int neighbor_num;
+    int h;
 };
 
 #endif //ROMANIAMAP_NODE_H

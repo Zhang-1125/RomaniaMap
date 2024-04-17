@@ -3,39 +3,44 @@
 //
 #include "../headers/Node.h"
 
-Node::Node(string name) {
-    this->name = name;
+/**
+ * Node类的构造函数
+ * 用于创建一个带有指定名称、高度和邻居数量的Node实例
+ *
+ * @param name 节点的名称，类型为string
+ * @param h 节点的高度，类型为int
+ * @param neighbor_num 节点的邻居数量，类型为int
+ */
+Node::Node(string name, int h, int neighbor_num) {
+    this->name = name; // 设置节点名称
+    this->h = h; // 设置节点高度
+    this->neighbor_num = neighbor_num; // 设置节点邻居数量
 }
 
+/**
+ * 获取节点的名称
+ *
+ * @return 返回节点的名称，类型为string
+ */
 string Node::getName() {
     return this->name;
 }
 
-void Node::addNeighbor(Node* node, int distance) {
-    neighbors.emplace(node->getName(), Neighbor{node,distance});
+/**
+ * 获取节点的邻居数量
+ *
+ * @return 返回节点的邻居数量，类型为int
+ */
+int Node::getNeighborNum() const {
+    return this->neighbor_num;
 }
 
-void Node::addNeighbor(Node *node1, int distance1, Node *node2, int distance2) {
-    neighbors.emplace(node1->getName(), Neighbor{node1,distance1});
-    neighbors.emplace(node2->getName(), Neighbor{node2,distance2});
+/**
+ * 获取节点的高度
+ *
+ * @return 返回节点的高度，类型为int
+ */
+int Node::getH() const {
+    return this->h;
 }
 
-void Node::addNeighbor(Node *node1, int distance1, Node *node2, int distance2, Node *node3, int distance3) {
-    neighbors.emplace(node1->getName(), Neighbor{node1,distance1});
-    neighbors.emplace(node2->getName(), Neighbor{node2,distance2});
-    neighbors.emplace(node3->getName(), Neighbor{node3,distance3});
-}
-
-void Node::addNeighbor(Node *node1, int distance1, Node *node2, int distance2, Node *node3, int distance3, Node *node4,
-                       int distance4) {
-    neighbors.emplace(node1->getName(), Neighbor{node1,distance1});
-    neighbors.emplace(node2->getName(), Neighbor{node2,distance2});
-    neighbors.emplace(node3->getName(), Neighbor{node3,distance3});
-    neighbors.emplace(node4->getName(), Neighbor{node4,distance4});
-}
-
-/*
-unsigned short Node::getID() const {
-    return this->ID;
-}
-*/

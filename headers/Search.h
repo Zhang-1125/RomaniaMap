@@ -5,25 +5,28 @@
 #ifndef ROMANIAMAP_SEARCH_H
 #define ROMANIAMAP_SEARCH_H
 
-#include <stack>
-#include <vector>
 #include "Node.h"
 
 class Search{
 public:
-    Search(Node* startNode, Node* endNode);
+    Search(string start, string goal);
+
+    void Init(const string& ss);
 
     void BFS();         // 广度优先搜索
     void DFS();         // 深度优先搜索
     void UCS();         // 一致代价搜索
+    int IDDFS(int x);   // 迭代加深搜索
     void GBFS();        // 贪婪搜索
     void AStar();       // A*搜索
 
 private:
-    Node* startNode;
-    Node* endNode;
+    string start;
+    string goal;
 
-
+    int state_num = 0;          // 总城市数目
+    std::unordered_map<string, Node*> graph;     // 存储罗马尼亚问题所有城市的信息
+    std::unordered_map<string, bool> explored;     // 存储已经探索过的城市
 
 };
 

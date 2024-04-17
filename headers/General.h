@@ -7,5 +7,4 @@
 
 #include "Node.h"
 
-
 #endif //ROMANIAMAP_GENERAL_H

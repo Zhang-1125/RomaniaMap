@@ -9,4 +9,6 @@ add_executable(RomaniaMap main.cpp
         headers/General.h
         cpps/General.cpp
         headers/Search.h
-        cpps/Search.cpp)
+        cpps/Search.cpp
+        headers/TreeNode.h
+        cpps/TreeNode.cpp)
