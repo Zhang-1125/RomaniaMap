@@ -19,6 +19,8 @@ public:
     void GBFS();        // 贪婪搜索
     void AStar();       // A*搜索
 
+
+
 private:
     string start;
     string goal;
@@ -26,7 +28,7 @@ private:
     int state_num = 0;          // 总城市数目
     std::unordered_map<string, Node*> graph;     // 存储罗马尼亚问题所有城市的信息
     std::unordered_map<string, bool> explored;     // 存储已经探索过的城市
-
+    void resetExplored();
 };
 
 #endif //ROMANIAMAP_SEARCH_H

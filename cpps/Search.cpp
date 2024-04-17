@@ -69,6 +69,7 @@ void Route(TreeNode* tn, string s){
  * 如图的表示、起始点和目标点等。
  */
 void Search::BFS() {
+    std::cout<<"----------------------------BFS----------------------------"<<std::endl;
     // 创建起始节点，并初始化搜索树的根节点和队列
     Node* startNode = graph[start];
     TreeNode* root = new TreeNode();
@@ -84,7 +85,9 @@ void Search::BFS() {
         Node* currentNode = current->node;
 
         // 打印当前节点信息
-        std::cout<<"Node name: "<<currentNode->getName()<<"\tValue: "<<current->value<<std::endl;
+        std::cout<<"Node name: "<<currentNode->getName()
+                 <<"\tValue: "<<current->value
+                 <<std::endl;
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
 
@@ -92,7 +95,10 @@ void Search::BFS() {
         if(currentNode->getName() == goal){
             std::cout<<"Goal found!"<<std::endl;
             Route(current,start);
-            std::cout<<"end";
+            std::cout<<"end"<<std::endl;
+
+            delete root;
+            resetExplored();
             return;
         }
 
@@ -107,7 +113,10 @@ void Search::BFS() {
             current->child_num++;                               // 更新当前节点的子节点数量
 
             // 打印邻居节点信息
-            std::cout<< "\tChildNode: "<<nextNodeName<<" \tValue: "<<current_child->value<<std::endl;
+            std::cout<< "\tChildNode: "<<nextNodeName
+                     <<" \tValue: "<<current_child->value
+                     <<" \tState: "<<explored[nextNodeName]
+                     <<std::endl;
 
             // 如果邻居节点未被探索，则将其加入队列
             if(explored[nextNodeName] == 0){
@@ -118,6 +127,8 @@ void Search::BFS() {
     }
     // 如果搜索完成队列为空仍未找到目标节点，则打印未找到目标信息
     std::cout << "Goal not found!" << std::endl;
+    delete root;
+    resetExplored();
 }
 
 
@@ -127,6 +138,7 @@ void Search::BFS() {
  * 注意：该实现假设图是通过一个邻接表（graph）来表示，其中start和goal是节点名称。
  */
 void Search::DFS() {
+    std::cout<<"----------------------------DFS----------------------------"<<std::endl;
     // 初始化起始节点和根节点
     Node* startNode = graph[start];
     TreeNode* root = new TreeNode();
@@ -153,7 +165,10 @@ void Search::DFS() {
         if(currentNode->getName() == goal){
             std::cout<<"Goal found!"<<std::endl;
             Route(current,start);
-            std::cout<<"end";
+            std::cout<<"end"<<std::endl;
+
+            delete root;
+            resetExplored();
             return;
         }
 
@@ -169,7 +184,10 @@ void Search::DFS() {
             current->child_num++;
 
             // 输出邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName<<" \tValue: "<<current_child->value<<std::endl;
+            std::cout<<"\tChildNode: "<<nextNodeName
+                     <<" \tValue: "<<current_child->value
+                     <<" \tState: "<<explored[nextNodeName]
+                     <<std::endl;
 
             // 如果邻居节点未被探索，则将其压入栈中继续探索
             if(explored[nextNodeName] == 0){
@@ -180,6 +198,8 @@ void Search::DFS() {
     }
     // 如果没有找到目标节点，则输出未找到目标的提示信息
     std::cout<<"Goal not found!"<<std::endl;
+    resetExplored();
+    delete root;
 }
 
 
@@ -217,6 +237,7 @@ std::queue<TreeNode*> sort(std::queue<TreeNode*> q){
  * start和goal是起点和目标点的标识符，分别在graph中查找对应的Node。
  */
 void Search::UCS() {
+    std::cout<<"----------------------------UCS----------------------------"<<std::endl;
     // 初始化起始节点和搜索树的根节点
     Node* startNode = graph[start];
     TreeNode* root = new TreeNode();
@@ -241,7 +262,10 @@ void Search::UCS() {
         if(currentNode->getName() == goal){
             std::cout<<"Goal found!"<<std::endl;
             Route(current,start);
-            std::cout<<"end";
+            std::cout<<"end"<<std::endl;
+
+            delete root;
+            resetExplored();
             return;
         }
 
@@ -256,7 +280,10 @@ void Search::UCS() {
             current->child_num++;
 
             // 打印邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName<<" \tValue: "<<current_child->value<<std::endl;
+            std::cout<<"\tChildNode: "<<nextNodeName
+                     <<" \tValue: "<<current_child->value
+                     <<" \tState: "<<explored[nextNodeName]
+                     <<std::endl;
 
             // 如果邻居节点未被探索，则将其入队
             if(explored[nextNodeName] == 0){
@@ -269,6 +296,8 @@ void Search::UCS() {
     }
     // 如果队列为空仍未找到目标，打印目标未找到信息
     std::cout<<"Goal not found!"<<std::endl;
+    delete root;
+    resetExplored();
 }
 
 
@@ -278,6 +307,7 @@ void Search::UCS() {
  * @return 如果找到目标节点返回1，否则返回0。
  */
 int Search::IDDFS(int D) {
+    std::cout<<"---------------------------IDDFS---------------------------"<<std::endl;
     Node* startNode = graph[start];
     TreeNode* root = new TreeNode(); // 创建根结点
     std::stack<TreeNode*> S; // 使用栈存储待搜索的结点
@@ -301,7 +331,10 @@ int Search::IDDFS(int D) {
         if(currentNode->getName() == goal){ // 如果找到目标节点
             std::cout<<"Goal found!"<<std::endl;
             Route(current,start); // 输出路径
-            std::cout<<"end";
+            std::cout<<"end"<<std::endl;
+
+            delete root;
+            resetExplored();
             return 1;
         }
 
@@ -317,7 +350,10 @@ int Search::IDDFS(int D) {
             current->child_num++;
 
             // 输出邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName<<" \tValue: "<<current_child->value<<std::endl;
+            std::cout<<"\tChildNode: "<<nextNodeName
+                     <<" \tValue: "<<current_child->value
+                     <<" \tState: "<<explored[nextNodeName]
+                     <<std::endl;
             if(explored[nextNodeName] == 0){ // 如果邻居节点未被探索，则加入搜索栈
                 S.push(current_child);
             }
@@ -325,6 +361,8 @@ int Search::IDDFS(int D) {
         std::cout<<std::endl;
     }
     std::cout<<"Goal not found!"<<std::endl; // 如果未找到目标节点
+    delete root;
+    resetExplored();
     return 0;
 }
 
@@ -350,6 +388,7 @@ struct Compare{
  * 在搜索过程中，会打印每个被探索的节点及其到起始节点的代价。
  */
 void Search::GBFS() {
+    std::cout<<"----------------------------GBFS----------------------------"<<std::endl;
     // 初始化起始节点和搜索树的根节点
     Node* startNode = graph[start];
     TreeNode* root = new TreeNode();
@@ -366,7 +405,9 @@ void Search::GBFS() {
         Q.pop();
         Node* currentNode = current->node;
         // 打印当前节点信息
-        std::cout<<"Node name: "<<currentNode->getName()<<"\tValue: "<<current->value<<std::endl;
+        std::cout<<"Node name: "<<currentNode->getName()
+                 <<"\tValue: "<<current->value
+                 <<std::endl;
 
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
@@ -375,7 +416,10 @@ void Search::GBFS() {
         if(currentNode->getName() == goal){
             std::cout<<"Goal found!"<<std::endl;
             Route(current,start);
-            std::cout<<"end";
+            std::cout<<"end"<<std::endl;
+
+            delete root;
+            resetExplored();
             return;
         }
 
@@ -390,7 +434,10 @@ void Search::GBFS() {
             current->child_num++;
 
             // 打印邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName<<" \tValue: "<<current_child->value<<std::endl;
+            std::cout<<"\tChildNode: "<<nextNodeName
+                     <<" \tValue: "<<current_child->value
+                     <<" \tState: "<<explored[nextNodeName]
+                     <<std::endl;
             // 如果邻居节点未被探索，则将其加入优先队列
             if(explored[nextNodeName] == 0){
                 Q.push(current_child);
@@ -400,6 +447,8 @@ void Search::GBFS() {
     }
     // 如果没有找到目标节点，则打印未找到目标信息
     std::cout<<"Goal not found!"<<std::endl;
+    delete root;
+    resetExplored();
 }
 
 /**
@@ -408,6 +457,7 @@ void Search::GBFS() {
  * 在搜索过程中，使用了A*算法的启发式函数来指导搜索。
  */
 void Search::AStar() {
+    std::cout<<"----------------------------A*----------------------------"<<std::endl;
     // 获取起始节点
     Node* startNode = graph[start];
     // 创建根结点
@@ -426,7 +476,9 @@ void Search::AStar() {
         Q.pop();
         // 输出当前节点信息
         Node* currentNode = current->node;
-        std::cout<<"Node name: "<<currentNode->getName()<<"\tValue: "<<current->value<<std::endl;
+        std::cout<<"Node name: "<<currentNode->getName()
+                 <<"\tValue: "<<current->value
+                 <<std::endl;
 
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
@@ -435,7 +487,10 @@ void Search::AStar() {
         if(currentNode->getName() == goal){
             std::cout<<"Goal found!"<<std::endl;
             Route(current,start);
-            std::cout<<"end";
+            std::cout<<"end"<<std::endl;
+
+            delete root;
+            resetExplored();
             return;
         }
 
@@ -451,7 +506,10 @@ void Search::AStar() {
             current->child_num++;
 
             // 输出新节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName<<" \tValue: "<<current_child->value<<std::endl;
+            std::cout<<"\tChildNode: "<<nextNodeName
+                     <<" \tValue: "<<current_child->value
+                     <<" \tState: "<<explored[nextNodeName]
+                     <<std::endl;
             // 如果邻居节点未被探索，则将其加入到优先队列中
             if (explored[nextNodeName] == 0){
                 Q.push(current_child);
@@ -461,4 +519,12 @@ void Search::AStar() {
     }
     // 如果搜索完成时仍未找到目标节点，则输出未找到目标的信息
     std::cout<<"Goal not found!"<<std::endl;
+    delete root;
+    resetExplored();
+}
+
+void Search::resetExplored() {
+    for (auto& entry : explored) {
+        entry.second = false;
+    }
 }
