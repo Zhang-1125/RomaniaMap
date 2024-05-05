@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "E:/software/CLion 2023.2.2/bin/mingw/bin/gcc.exe")
+set(CMAKE_C_COMPILER "D:/software/CLion 2023.2.2/bin/mingw/bin/gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "13.1.0")
@@ -21,11 +21,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "E:/software/CLion 2023.2.2/bin/mingw/bin/ar.exe")
-set(CMAKE_C_COMPILER_AR "E:/software/CLion 2023.2.2/bin/mingw/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "E:/software/CLion 2023.2.2/bin/mingw/bin/ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "E:/software/CLion 2023.2.2/bin/mingw/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "E:/software/CLion 2023.2.2/bin/mingw/bin/ld.exe")
+set(CMAKE_AR "D:/software/CLion 2023.2.2/bin/mingw/bin/ar.exe")
+set(CMAKE_C_COMPILER_AR "D:/software/CLion 2023.2.2/bin/mingw/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "D:/software/CLion 2023.2.2/bin/mingw/bin/ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "D:/software/CLion 2023.2.2/bin/mingw/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "D:/software/CLion 2023.2.2/bin/mingw/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
@@ -66,7 +66,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "E:/software/CLion 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include;E:/software/CLion 2023.2.2/bin/mingw/include;E:/software/CLion 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;E:/software/CLion 2023.2.2/bin/mingw/x86_64-w64-mingw32/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "D:/software/CLion 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include;D:/software/CLion 2023.2.2/bin/mingw/include;D:/software/CLion 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;D:/software/CLion 2023.2.2/bin/mingw/x86_64-w64-mingw32/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

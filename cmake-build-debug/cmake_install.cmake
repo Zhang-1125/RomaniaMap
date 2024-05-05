@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/MoQing/Desktop/RomaniaMap
+# Install script for directory: C:/Users/26624/Desktop/RomaniaMap/RomaniaMap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "E:/software/CLion 2023.2.2/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "D:/software/CLion 2023.2.2/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/MoQing/Desktop/RomaniaMap/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/26624/Desktop/RomaniaMap/RomaniaMap/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

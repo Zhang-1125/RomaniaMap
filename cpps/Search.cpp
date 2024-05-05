@@ -85,11 +85,19 @@ void Search::BFS() {
         Node* currentNode = current->node;
 
         // 打印当前节点信息
-        std::cout<<"Node name: "<<currentNode->getName()
-                 <<"\tValue: "<<current->value
+        std::cout<<"NodeName: "<<currentNode->getName()
+                 <<"\tCost: "<<current->value
                  <<std::endl;
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
+
+        std::cout << "\tSearch set (Visited Nodes):" << std::endl;
+        for (const auto& entry : explored) {
+            if (entry.second) { // 只打印值为true的条目
+                std::cout << "\t\t" << entry.first << std::endl;
+            }
+        }
+        std::cout << std::endl;
 
         // 如果当前节点是目标节点，则找到路径并打印
         if(currentNode->getName() == goal){
@@ -113,8 +121,8 @@ void Search::BFS() {
             current->child_num++;                               // 更新当前节点的子节点数量
 
             // 打印邻居节点信息
-            std::cout<< "\tChildNode: "<<nextNodeName
-                     <<" \tValue: "<<current_child->value
+            std::cout<< "\tSuccessor Node: "<<nextNodeName
+                     <<" \tCost: "<<current_child->value
                      <<" \tState: "<<explored[nextNodeName]
                      <<std::endl;
 
@@ -154,12 +162,19 @@ void Search::DFS() {
 
         // 输出当前节点信息
         std::cout << "NodeName: "<<currentNode->getName()
-                  <<"\tValue: "<<current->value
+                  <<"\tCost: "<<current->value
                   <<"\tDepth: "<<current->depth
                   <<std::endl;
 
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
+        std::cout << "\tSearch set (Visited Nodes):" << std::endl;
+        for (const auto& entry : explored) {
+            if (entry.second) { // 只打印值为true的条目
+                std::cout << "\t\t" << entry.first << std::endl;
+            }
+        }
+        std::cout << std::endl;
 
         // 如果当前节点是目标节点，则输出路径并结束搜索
         if(currentNode->getName() == goal){
@@ -184,8 +199,8 @@ void Search::DFS() {
             current->child_num++;
 
             // 输出邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName
-                     <<" \tValue: "<<current_child->value
+            std::cout<<"\tSuccessor Node: "<<nextNodeName
+                     <<" \tCost: "<<current_child->value
                      <<" \tState: "<<explored[nextNodeName]
                      <<std::endl;
 
@@ -253,10 +268,17 @@ void Search::UCS() {
         Node* currentNode = current->node;
 
         // 打印当前节点信息
-        std::cout<<"Node name: "<<currentNode->getName()<<"\tValue: "<<current->value<<std::endl;
+        std::cout<<"NodeName: "<<currentNode->getName()<<"\tCost: "<<current->value<<std::endl;
 
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
+        std::cout << "\tSearch set (Visited Nodes):" << std::endl;
+        for (const auto& entry : explored) {
+            if (entry.second) { // 只打印值为true的条目
+                std::cout << "\t\t" << entry.first << std::endl;
+            }
+        }
+        std::cout << std::endl;
 
         // 如果当前节点是目标节点，则找到路径，打印路径和结束信息
         if(currentNode->getName() == goal){
@@ -280,8 +302,8 @@ void Search::UCS() {
             current->child_num++;
 
             // 打印邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName
-                     <<" \tValue: "<<current_child->value
+            std::cout<<"\tSuccessor Node: "<<nextNodeName
+                     <<" \tCost: "<<current_child->value
                      <<" \tState: "<<explored[nextNodeName]
                      <<std::endl;
 
@@ -323,10 +345,17 @@ int Search::IDDFS(int D) {
         // 输出当前节点信息
         Node* currentNode = current->node;
         std::cout<<"NodeName: "<<currentNode->getName()
-                 <<"\tValue: "<<current->value
+                 <<"\tCost: "<<current->value
                  <<"\tDepth: "<<current->depth
                  <<std::endl;
         explored[currentNode->getName()] = true; // 标记当前节点为已探索
+        std::cout << "\tSearch set (Visited Nodes):" << std::endl;
+        for (const auto& entry : explored) {
+            if (entry.second) { // 只打印值为true的条目
+                std::cout << "\t\t" << entry.first << std::endl;
+            }
+        }
+        std::cout << std::endl;
 
         if(currentNode->getName() == goal){ // 如果找到目标节点
             std::cout<<"Goal found!"<<std::endl;
@@ -350,8 +379,8 @@ int Search::IDDFS(int D) {
             current->child_num++;
 
             // 输出邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName
-                     <<" \tValue: "<<current_child->value
+            std::cout<<"\tSuccessor Node: "<<nextNodeName
+                     <<" \tCost: "<<current_child->value
                      <<" \tState: "<<explored[nextNodeName]
                      <<std::endl;
             if(explored[nextNodeName] == 0){ // 如果邻居节点未被探索，则加入搜索栈
@@ -405,12 +434,19 @@ void Search::GBFS() {
         Q.pop();
         Node* currentNode = current->node;
         // 打印当前节点信息
-        std::cout<<"Node name: "<<currentNode->getName()
-                 <<"\tValue: "<<current->value
+        std::cout<<"NodeName: "<<currentNode->getName()
+                 <<"\tCost: "<<current->value
                  <<std::endl;
 
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
+        std::cout << "\tSearch set (Visited Nodes):" << std::endl;
+        for (const auto& entry : explored) {
+            if (entry.second) { // 只打印值为true的条目
+                std::cout << "\t\t" << entry.first << std::endl;
+            }
+        }
+        std::cout << std::endl;
 
         // 如果当前节点是目标节点，则找到路径并打印
         if(currentNode->getName() == goal){
@@ -434,8 +470,8 @@ void Search::GBFS() {
             current->child_num++;
 
             // 打印邻居节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName
-                     <<" \tValue: "<<current_child->value
+            std::cout<<"\tSuccessor Node: "<<nextNodeName
+                     <<" \tCost: "<<current_child->value
                      <<" \tState: "<<explored[nextNodeName]
                      <<std::endl;
             // 如果邻居节点未被探索，则将其加入优先队列
@@ -476,12 +512,19 @@ void Search::AStar() {
         Q.pop();
         // 输出当前节点信息
         Node* currentNode = current->node;
-        std::cout<<"Node name: "<<currentNode->getName()
-                 <<"\tValue: "<<current->value
+        std::cout<<"NodeName: "<<currentNode->getName()
+                 <<"\tCost: "<<current->value
                  <<std::endl;
 
         // 标记当前节点为已探索
         explored[currentNode->getName()] = true;
+        std::cout << "\tSearch set (Visited Nodes):" << std::endl;
+        for (const auto& entry : explored) {
+            if (entry.second) { // 只打印值为true的条目
+                std::cout << "\t\t" << entry.first << std::endl;
+            }
+        }
+        std::cout << std::endl;
 
         // 如果当前节点是目标节点，则找到路径，输出路径信息
         if(currentNode->getName() == goal){
@@ -506,8 +549,8 @@ void Search::AStar() {
             current->child_num++;
 
             // 输出新节点信息
-            std::cout<<"\tChildNode: "<<nextNodeName
-                     <<" \tValue: "<<current_child->value
+            std::cout<<"\tSuccessor Node: "<<nextNodeName
+                     <<" \tCost: "<<current_child->value
                      <<" \tState: "<<explored[nextNodeName]
                      <<std::endl;
             // 如果邻居节点未被探索，则将其加入到优先队列中
